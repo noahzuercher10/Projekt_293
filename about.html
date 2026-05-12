@@ -18,28 +18,28 @@
         <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
         </svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <svg class="icon-close is-hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
         </svg>
       </button>
 
-      <div class="nav__links">
-        <a href="index.html"     data-nav="index.html">Home</a>
-        <a href="about.html"     data-nav="about.html">Über mich</a>
-        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
-        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
-        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
-      </div>
+      <ul class="nav__links">
+        <li><a href="index.html"     data-nav="index.html">Home</a></li>
+        <li><a href="about.html"     data-nav="about.html">Über mich</a></li>
+        <li><a href="skills.html"    data-nav="skills.html">Fähigkeiten</a></li>
+        <li><a href="portfolio.html" data-nav="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html"   data-nav="contact.html">Kontakt</a></li>
+      </ul>
     </div>
 
     <div class="nav__mobile">
-      <div class="nav__mobile-inner">
-        <a href="index.html"     data-nav="index.html">Home</a>
-        <a href="about.html"     data-nav="about.html">Über mich</a>
-        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
-        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
-        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
-      </div>
+      <ul class="nav__mobile-inner">
+        <li><a href="index.html"     data-nav="index.html">Home</a></li>
+        <li><a href="about.html"     data-nav="about.html">Über mich</a></li>
+        <li><a href="skills.html"    data-nav="skills.html">Fähigkeiten</a></li>
+        <li><a href="portfolio.html" data-nav="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html"   data-nav="contact.html">Kontakt</a></li>
+      </ul>
     </div>
   </nav>
 
@@ -136,16 +136,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script>
-    // Placeholder verstecken, sobald Video geladen wurde
-    (function(){
-      var v = document.querySelector('.video-block video');
-      var ph = document.getElementById('video-placeholder');
-      if (!v || !ph) return;
-      v.addEventListener('loadeddata', function(){ ph.style.display = 'none'; });
-      v.addEventListener('play',       function(){ ph.style.display = 'none'; });
-      v.addEventListener('error',      function(){ ph.style.display = 'flex'; });
-    })();
-  </script>
 </body>
 </html>

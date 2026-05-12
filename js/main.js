@@ -11,7 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
   setActiveNav();
   animateSkills();
   initContactForm();
+  initVideoPlaceholder();
+  initImageFallback();
 });
+
+/* ---------- Image Fallback (data-fallback) ---------- */
+function initImageFallback() {
+  document.querySelectorAll('img[data-fallback]').forEach(img => {
+    img.addEventListener('error', () => {
+      const fb = img.getAttribute('data-fallback');
+      if (fb && img.src !== fb) img.src = fb;
+    }, { once: true });
+  });
+}
+
+/* ---------- Video Placeholder (About-Seite) ---------- */
+function initVideoPlaceholder() {
+  const v  = document.querySelector('.video-block video');
+  const ph = document.getElementById('video-placeholder');
+  if (!v || !ph) return;
+  v.addEventListener('loadeddata', () => ph.classList.add('is-hidden'));
+  v.addEventListener('play',       () => ph.classList.add('is-hidden'));
+  v.addEventListener('error',      () => ph.classList.remove('is-hidden'));
+}
 
 /* ---------- Mobile Menu ---------- */
 function initMobileMenu() {
@@ -22,24 +44,20 @@ function initMobileMenu() {
   const iconOpen  = burger.querySelector('.icon-menu');
   const iconClose = burger.querySelector('.icon-close');
 
+  const setOpen = (open) => {
+    mobile.classList.toggle('open', open);
+    if (iconOpen)  iconOpen.classList.toggle('is-hidden',  open);
+    if (iconClose) iconClose.classList.toggle('is-hidden', !open);
+    burger.setAttribute('aria-expanded', open);
+  };
+
   burger.addEventListener('click', () => {
-    const isOpen = mobile.classList.toggle('open');
-    if (iconOpen && iconClose) {
-      iconOpen.style.display  = isOpen ? 'none' : '';
-      iconClose.style.display = isOpen ? '' : 'none';
-    }
-    burger.setAttribute('aria-expanded', isOpen);
+    setOpen(!mobile.classList.contains('open'));
   });
 
   // Schliessen, wenn ein Link geklickt wird
   mobile.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobile.classList.remove('open');
-      if (iconOpen && iconClose) {
-        iconOpen.style.display = '';
-        iconClose.style.display = 'none';
-      }
-    });
+    link.addEventListener('click', () => setOpen(false));
   });
 }
 

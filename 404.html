@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo"><span class="text-gradient">NZ</span></a>
+      <div class="nav__page-title">NZ</div>
+
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="nav__links">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+
+    <div class="nav__mobile">
+      <div class="nav__mobile-inner">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="notfound">
+      <div>
+        <div class="notfound__emoji">&#x1F50D;</div>
+        <h1 class="text-gradient">404</h1>
+        <h2>Seite nicht gefunden</h2>
+        <p>Die Seite, die Sie suchen, existiert leider nicht oder wurde verschoben.</p>
+        <a href="index.html" class="btn btn--primary">Zurück zur Startseite</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Noah Zürcher. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

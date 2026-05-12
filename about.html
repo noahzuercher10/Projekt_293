@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über mich</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo"><span class="text-gradient">NZ</span></a>
+      <div class="nav__page-title">Über mich</div>
+
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="nav__links">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+
+    <div class="nav__mobile">
+      <div class="nav__mobile-inner">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2>Über mich</h2>
+          <div class="section__divider"></div>
+        </div>
+
+        <div class="about__inner">
+          <!-- Text Card -->
+          <div class="text-card">
+            <p>
+              Den Beruf Informatiker habe ich nicht nur wegen dem Programmieren gewählt.
+              Ich löse gerne Probleme und entscheide auch gern wie etwas auszusehen hat.
+              Diese Freiheit habe ich als Informatiker.
+            </p>
+            <p>
+              Mein Fokus liegt allerdings nicht nur auf der Lehre ich betrteibe nämlich
+              schon seit 5 Jahren Leistungssport. Ich habe mit 5 Jahren angfeangen mit
+              Fussball beim FC Herisau. Nach Stationen beim Stützpunkt Appenzell und dem
+              FC St.Gallen bin ich beim FC Wil gelandet.
+            </p>
+            <p>
+              Wenn ich nicht gerade am Fussball spielen bin, dann bin ich gerne mit Freunden
+              draussen oder mache mit meiner Familie etwas.
+            </p>
+          </div>
+
+          <!-- 3 Cards -->
+          <div class="cards-grid">
+            <div class="info-card info-card--blue">
+              <div class="info-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+              </div>
+              <h3>Ausbildung</h3>
+              <p>Ich habe die Sekundarschule abgeschlossen und bin jetzt an der Informatiker Lehre dran.</p>
+            </div>
+
+            <div class="info-card info-card--purple">
+              <div class="info-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="14" x="2" y="6" rx="2"/>
+                  <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                </svg>
+              </div>
+              <h3>Erfahrung</h3>
+              <p>8+ Jahre Fussball, 1/2 Jahr Informatiker, 1/4 Jahr Webdesign</p>
+            </div>
+
+            <div class="info-card info-card--pink">
+              <div class="info-card__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                  <path d="M4 22h16"/>
+                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+                </svg>
+              </div>
+              <h3>Projekte</h3>
+              <p>10+ erfolgreiche Projekte abgeschlossen</p>
+            </div>
+          </div>
+
+          <!-- Video -->
+          <div class="video-block">
+            <video controls preload="metadata" poster="" playsinline>
+              <source src="video/fussball.mp4" type="video/mp4">
+              <source src="video/fussball.webm" type="video/webm">
+              Dein Browser unterstützt das Video-Tag nicht.
+            </video>
+            <div class="video-block__placeholder" id="video-placeholder">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6 3 20 12 6 21 6 3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Noah Zürcher. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Placeholder verstecken, sobald Video geladen wurde
+    (function(){
+      var v = document.querySelector('.video-block video');
+      var ph = document.getElementById('video-placeholder');
+      if (!v || !ph) return;
+      v.addEventListener('loadeddata', function(){ ph.style.display = 'none'; });
+      v.addEventListener('play',       function(){ ph.style.display = 'none'; });
+      v.addEventListener('error',      function(){ ph.style.display = 'flex'; });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <meta name="description" content="Persönliche Webseite von Noah Zürcher, angehender Informatiker und Fussballer beim FC Wil." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo"><span class="text-gradient">NZ</span></a>
+      <div class="nav__page-title">Home</div>
+
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="nav__links">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+
+    <div class="nav__mobile">
+      <div class="nav__mobile-inner">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Hero ===== -->
+  <main>
+    <section class="section section--hero">
+      <div class="container">
+        <div class="hero">
+          <div class="hero__text">
+            <span class="hero__badge">Willkommen auf meiner Website</span>
+            <h1>Hallo, ich bin <span class="text-gradient">Noah Zürcher</span></h1>
+            <p class="hero__lede">
+              Angehender Informatiker Fachrichtung Applikationsentwicklung
+              &amp; angehender Fussballer beim FC Wil
+            </p>
+            <div class="hero__buttons">
+              <a href="portfolio.html" class="btn btn--primary">Projekte ansehen</a>
+              <a href="contact.html"   class="btn btn--outline">Zum Kontaktformular</a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <img src="bild/profil.jpg"
+                 alt="Noah Zürcher"
+                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80'">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Noah Zürcher. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

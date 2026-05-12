@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo"><span class="text-gradient">NZ</span></a>
+      <div class="nav__page-title">Portfolio</div>
+
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="nav__links">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+
+    <div class="nav__mobile">
+      <div class="nav__mobile-inner">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2>Portfolio</h2>
+          <div class="section__divider"></div>
+          <p class="section__lede">Auswahl von Projekten die ich in meiner Lehre erstellt habe.</p>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="https://th.bing.com/th/id/R.85ced22273000dbfd9be84eb376287e2?rik=mpe%2fYsh5W97QHQ&pid=ImgRaw&r=0" alt="Webseite programmieren">
+            </div>
+            <div class="project-card__body">
+              <h3>Webseite programmieren</h3>
+              <p>Ich habe eine vollständige Webseite für einen Kunden programmiert.</p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Git Lab</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="https://images.gutefrage.net/media/fragen/bilder/einfache-berechnung-in-java/0_big.png?v=1682848620051" alt="Java Rechner programmieren">
+            </div>
+            <div class="project-card__body">
+              <h3>Java Rechner programmieren</h3>
+              <p>Einen Rechner für alle Grundoperatoren programmieren.</p>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">Git Hub</span>
+                <span class="tag">IDE</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="https://www.fivetk.com/wp-content/uploads/1.-server-hardware-02-1536x1024.jpg" alt="Server aufsetzen">
+            </div>
+            <div class="project-card__body">
+              <h3>Server aufsetzen</h3>
+              <p>Wir durften einen Microsoft Server von Grund auf aufsetzen.</p>
+              <div class="tags">
+                <span class="tag">Server</span>
+                <span class="tag">Active Directory</span>
+                <span class="tag">Domainendienste</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIPg7erQO8ISlB45My7zxEtJPeMjOL1WEjDol-bucMLrCwK1ByfHrLSgkaApqvimQo4qbLlpDMeti4u3oDpySirBEYgmTQbcYCjRAweXi9MXEXAbbn0_KUuyKFkD3CCcf8J9C3is9ZYZekURNbA5AvvHsWkfQAenhHJQ5rbPQ2qKP2P_PkXllRDRiTGw/s1973/java.PNG" alt="Java GUI Projekt">
+            </div>
+            <div class="project-card__body">
+              <h3>Java Gui Projekt</h3>
+              <p>Wir durften in Java ein Gui programmieren.</p>
+              <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">Gui</span>
+                <span class="tag">Testen</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/943b02f7-f249-431b-a21d-91e8d96c3ce0.png" alt="Power Automate Projekt">
+            </div>
+            <div class="project-card__body">
+              <h3>Power Automate Projekt</h3>
+              <p>Mit Power Automate konnten wir Prozesse beschleunigen.</p>
+              <div class="tags">
+                <span class="tag">Power Automate</span>
+                <span class="tag">Iperka</span>
+                <span class="tag">Testen</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card__image">
+              <img src="https://th.bing.com/th/id/R.a1a7cb250682dbb46d75aaf84bb0cf71?rik=Ud7VcQEMvb7tjA&pid=ImgRaw&r=0" alt="Active Directory Projekt">
+            </div>
+            <div class="project-card__body">
+              <h3>Active Directory Projekt</h3>
+              <p>In einem Team aus durften wir eine Domainenstruktur bauen.</p>
+              <div class="tags">
+                <span class="tag">Server</span>
+                <span class="tag">Cloud</span>
+                <span class="tag">Domainendienste</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Noah Zürcher. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

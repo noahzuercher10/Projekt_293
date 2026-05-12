@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo"><span class="text-gradient">NZ</span></a>
+      <div class="nav__page-title">Kontakt</div>
+
+      <button class="nav__burger" aria-label="Menü öffnen" aria-expanded="false">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+
+      <div class="nav__links">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+
+    <div class="nav__mobile">
+      <div class="nav__mobile-inner">
+        <a href="index.html"     data-nav="index.html">Home</a>
+        <a href="about.html"     data-nav="about.html">Über mich</a>
+        <a href="skills.html"    data-nav="skills.html">Fähigkeiten</a>
+        <a href="portfolio.html" data-nav="portfolio.html">Portfolio</a>
+        <a href="contact.html"   data-nav="contact.html">Kontakt</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2>Kontakt</h2>
+          <div class="section__divider"></div>
+          <p class="section__lede">Haben Sie ein Anliegen? Lassen Sie es mich wissen.</p>
+        </div>
+
+        <div class="contact-grid">
+
+          <!-- Form -->
+          <div class="contact-form">
+            <h3>Schreiben Sie mir</h3>
+            <form id="contact-form" novalidate>
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required />
+              </div>
+              <div class="form-field">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="ihre.email@example.com" required />
+              </div>
+              <div class="form-field">
+                <label for="subject">Betreff</label>
+                <input type="text" id="subject" name="subject" placeholder="Worum geht es?" required />
+              </div>
+              <div class="form-field">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" rows="5" placeholder="Ihre Nachricht..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Nachricht senden</button>
+            </form>
+          </div>
+
+          <!-- Info -->
+          <div class="contact-info">
+
+            <div class="info-block info-block--blue">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <h3>E-Mail</h3>
+              <a href="mailto:noah.zuercher10@icloud.com">noah.zuercher10@icloud.com</a>
+            </div>
+
+            <div class="info-block info-block--purple">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <h3>Telefon</h3>
+              <a href="tel:+41774496056">077 449 60 56</a>
+            </div>
+
+            <div class="info-block info-block--pink">
+              <div class="info-block__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 7-8 13-8 13s-8-6-8-13a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <h3>Standort</h3>
+              <p>Kreckel 7c 9100 Herisau</p>
+            </div>
+
+            <div class="social-block">
+              <h3>Social Media</h3>
+              <div class="social-list">
+                <a class="s-instagram" href="https://instagram.com/noah.zuri" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                </a>
+                <a class="s-tiktok" href="https://tiktok.com/@noah.zuri" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                </a>
+                <a class="s-snapchat" href="https://snapchat.com/add/noahzuercher10" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 1a8 8 0 0 0-8 8v13l3-2.3 3 2.3 3-2.3 3 2.3 3-2.3V9a8 8 0 0 0-8-8z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Noah Zürcher. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

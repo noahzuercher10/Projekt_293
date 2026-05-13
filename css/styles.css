@@ -135,13 +135,16 @@ main { flex: 1; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0.5rem;          /* mobile baseline: +8px */
+  padding: 1rem 1rem;            /* mobile baseline: +16px */
 }
 @media (min-width: 768px) {
-  .nav__inner { padding: 1rem 0.75rem; }   /* +12px Tablet  */
+  .nav__inner { padding: 1rem 1.5rem; }    /* +24px Tablet  */
 }
 @media (min-width: 1024px) {
-  .nav__inner { padding: 1rem 1rem; }      /* +16px Desktop */
+  .nav__inner { padding: 1rem 2rem; }      /* +32px Desktop */
+}
+@media (min-width: 1280px) {
+  .nav__inner { padding: 1rem 2.5rem; }    /* +40px Large Desktop */
 }
 .nav__logo {
   font-size: 1.5rem;
@@ -425,11 +428,21 @@ main { flex: 1; }
 }
 .skill__fill {
   height: 100%;
-  width: 0;
   background: var(--gradient-primary);
   border-radius: var(--radius-full);
   transition: width 1.2s cubic-bezier(.2,.7,.2,1);
 }
+/* CSS-Fallback: Bars sind immer sichtbar auch ohne JS */
+.skill__fill[data-level="20"] { width: 20%; }
+.skill__fill[data-level="25"] { width: 25%; }
+.skill__fill[data-level="35"] { width: 35%; }
+.skill__fill[data-level="40"] { width: 40%; }
+.skill__fill[data-level="50"] { width: 50%; }
+.skill__fill[data-level="60"] { width: 60%; }
+.skill__fill[data-level="70"] { width: 70%; }
+.skill__fill[data-level="80"] { width: 80%; }
+/* JS-Animation: kurz auf 0 bevor sichtbar werden */
+.skill__fill.is-pre-animate { width: 0 !important; }
 
 .skills__extra {
   margin-top: 4rem;

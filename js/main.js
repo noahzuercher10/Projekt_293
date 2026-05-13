@@ -73,23 +73,23 @@ function setActiveNav() {
   });
 }
 
-/* ---------- Skill-Bars Animation ---------- */
+/* ---------- Skill-Bars Animation ----------
+   CSS setzt die finalen Breiten via [data-level] Selektoren.
+   JS macht nur den "Wachsen"-Effekt: kurz auf 0 zwingen, dann
+   beim Sichtbarwerden Klasse entfernen → CSS-transition läuft. */
 function animateSkills() {
   const fills = document.querySelectorAll('.skill__fill');
   if (!fills.length) return;
 
-  if (!('IntersectionObserver' in window)) {
-    // Fallback: direkt setzen
-    fills.forEach(el => el.style.width = el.dataset.level + '%');
-    return;
-  }
+  if (!('IntersectionObserver' in window)) return; // Fallback: CSS zeigt bereits final
+
+  fills.forEach(el => el.classList.add('is-pre-animate'));
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const el = entry.target;
-        el.style.width = el.dataset.level + '%';
-        observer.unobserve(el);
+        entry.target.classList.remove('is-pre-animate');
+        observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.3 });

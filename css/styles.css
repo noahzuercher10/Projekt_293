@@ -61,7 +61,11 @@
   padding: 0;
 }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: clip;              /* verhindert horizontales Scrollen ohne sticky zu brechen */
+}
 
 body {
   font-family: var(--font-sans);
@@ -71,7 +75,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;            /* verhindert horizontales Scrollen */
+  /* KEIN overflow-x: hidden — das bricht position: sticky am Header! */
 }
 
 a { color: inherit; text-decoration: none; }
@@ -80,12 +84,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ul, ol { list-style: none; }
 input, textarea { font-family: inherit; }
 
-/* ---------- Typography ---------- */
-h1 { font-size: clamp(2.25rem, 4vw + 1rem, 3.75rem); font-weight: 700; line-height: 1.15; }
-h2 { font-size: 2.25rem; font-weight: 600; line-height: 1.25; }
-h3 { font-size: 1.5rem; font-weight: 600; }
-h4 { font-size: 1.25rem; font-weight: 600; }
-p  { line-height: 1.7; }
+/* ---------- Typography (responsive mit clamp) ---------- */
+h1 { font-size: clamp(1.75rem, 5vw + 0.5rem, 3.75rem); font-weight: 700; line-height: 1.15; }
+h2 { font-size: clamp(1.5rem,  3vw + 0.5rem, 2.25rem); font-weight: 600; line-height: 1.25; }
+h3 { font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem); font-weight: 600; }
+h4 { font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem); font-weight: 600; }
+p  { font-size: clamp(0.95rem, 0.5vw + 0.75rem, 1rem); line-height: 1.6; }
+body { font-size: clamp(0.95rem, 0.5vw + 0.75rem, 1rem); }
+/* Lange Wörter sauber umbrechen statt das Layout zu sprengen */
+h1, h2, h3, h4, p, li, a, label, button { overflow-wrap: break-word; word-wrap: break-word; }
 
 .text-gradient {
   background: var(--gradient-primary);
@@ -97,37 +104,51 @@ p  { line-height: 1.7; }
 
 /* ---------- Layout ---------- */
 .container {
-  max-width: 72rem; /* 1152px ~ max-w-6xl */
+  max-width: 72rem;
   margin: 0 auto;
-  /* iPhone-Notch / Safe-Area berücksichtigen + grundsätzlich grosszügiger Abstand zum Rand */
-  padding-left:  max(1.5rem, env(safe-area-inset-left));   /* 24px – kleine Phones */
-  padding-right: max(1.5rem, env(safe-area-inset-right));
+  padding-left:  max(1rem, env(safe-area-inset-left));     /* 16px – sehr schmale Phones */
+  padding-right: max(1rem, env(safe-area-inset-right));
   width: 100%;
+  box-sizing: border-box;
+}
+@media (min-width: 360px) {
+  .container { padding-left: 1.25rem; padding-right: 1.25rem; }   /* 20px */
 }
 @media (min-width: 480px) {
-  .container { padding-left: 2rem;    padding-right: 2rem;    }   /* 32px – grosse Phones */
+  .container { padding-left: 1.75rem; padding-right: 1.75rem; }   /* 28px */
 }
 @media (min-width: 768px) {
-  .container { padding-left: 2.5rem;  padding-right: 2.5rem;  }   /* 40px – Tablets */
+  .container { padding-left: 2.25rem; padding-right: 2.25rem; }   /* 36px */
 }
 @media (min-width: 1024px) {
-  .container { padding-left: 3rem;    padding-right: 3rem;    }   /* 48px – Notebook */
+  .container { padding-left: 3rem;    padding-right: 3rem;    }   /* 48px */
 }
 @media (min-width: 1280px) {
-  .container { padding-left: 3.5rem;  padding-right: 3.5rem;  }   /* 56px – Desktop */
+  .container { padding-left: 3.5rem;  padding-right: 3.5rem;  }   /* 56px */
 }
 
-main { flex: 1; }
+main { flex: 1; min-width: 0; }
+/* Grid-Items dürfen ihren Container nicht aufblasen */
+.skills-grid > *,
+.cards-grid > *,
+.portfolio-grid > *,
+.contact-grid > *,
+.chips > *,
+.tags > * { min-width: 0; }
 
 /* ---------- Navigation ---------- */
 .nav {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,.95);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: var(--shadow-sm);
+  z-index: 100;
+  background: #ffffff;          /* deckend weiss – Content darf NICHT durchschimmern */
+  box-shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  /* Garantiert volle Breite – nimmt IMMER den ganzen Header ein */
+  width: 100%;
+  left: 0;
+  right: 0;
+  margin: 0;
+  align-self: stretch;          /* falls body flex-container ist */
 }
 /* Navigation hat IMMER zusätzliches horizontales Padding,
    damit Logo und Links nie an der Bildschirmkante kleben.   */
@@ -184,7 +205,8 @@ main { flex: 1; }
 .nav__mobile {
   display: none;
   border-top: 1px solid var(--slate-200);
-  background: #fff;
+  background: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.08);
 }
 .nav__mobile.open { display: block; }
 .nav__mobile-inner {
@@ -219,11 +241,11 @@ main { flex: 1; }
 
 /* ---------- Sections ---------- */
 .section {
-  padding: 5rem 0;
+  padding: clamp(2rem, 6vw, 5rem) 0;
 }
 .section--hero {
-  padding-top: 5rem;
-  padding-bottom: 8rem;
+  padding-top: clamp(2rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 9vw, 8rem);
 }
 .section__header {
   text-align: center;
@@ -276,8 +298,8 @@ main { flex: 1; }
 }
 .hero__image {
   flex-shrink: 0;
-  width: 16rem;
-  height: 16rem;
+  width: clamp(10rem, 40vw, 16rem);    /* 160px – 256px */
+  height: clamp(10rem, 40vw, 16rem);
   border-radius: var(--radius-full);
   overflow: hidden;
   box-shadow: var(--shadow-2xl);
@@ -295,7 +317,7 @@ main { flex: 1; }
   .hero__text { text-align: left; }
   .hero__badge { align-self: flex-start; }
   .hero__buttons { justify-content: flex-start; }
-  .hero__image { width: 20rem; height: 20rem; }
+  .hero__image { width: clamp(14rem, 25vw, 20rem); height: clamp(14rem, 25vw, 20rem); }
 }
 
 /* ---------- Buttons ---------- */
@@ -303,12 +325,14 @@ main { flex: 1; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
+  padding: clamp(0.6rem, 1vw + 0.4rem, 0.75rem) clamp(1rem, 2vw + 0.5rem, 1.5rem);
   border-radius: var(--radius-md);
   font-weight: 500;
   transition: box-shadow .2s, color .2s, border-color .2s, transform .15s;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
+  text-align: center;
+  line-height: 1.2;
 }
 .btn--primary {
   background: var(--gradient-primary);
@@ -334,12 +358,12 @@ main { flex: 1; }
 .text-card {
   background: #fff;
   border-radius: var(--radius-xl);
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--slate-200);
 }
 .text-card p {
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.125rem);
   color: var(--slate-700);
   margin-bottom: 1.5rem;
 }
@@ -357,7 +381,7 @@ main { flex: 1; }
 
 .info-card {
   border-radius: var(--radius-md);
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.5rem);
 }
 .info-card--blue   { background: var(--gradient-blue-card);   border: 1px solid var(--blue-200);   }
 .info-card--purple { background: var(--gradient-purple-card); border: 1px solid var(--purple-200); }
@@ -374,10 +398,10 @@ main { flex: 1; }
 
 /* Video Block */
 .video-block {
-  margin-top: 3rem;
+  margin-top: clamp(1.5rem, 5vw, 3rem);
   position: relative;
   width: 100%;
-  height: 24rem;
+  height: clamp(12rem, 50vw, 24rem);   /* 192px – 384px */
   background: var(--slate-200);
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -457,11 +481,14 @@ main { flex: 1; }
 }
 .chips {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  grid-template-columns: 1fr;            /* 1 Spalte – sehr schmal */
+  gap: 0.75rem;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+@media (min-width: 360px) {
+  .chips { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
 }
 @media (min-width: 768px) {
   .chips { grid-template-columns: repeat(4, 1fr); }
@@ -502,7 +529,7 @@ main { flex: 1; }
 }
 .project-card:hover { box-shadow: var(--shadow-2xl); }
 .project-card__image {
-  height: 12rem;
+  height: clamp(8rem, 25vw, 12rem);     /* 128px – 192px */
   overflow: hidden;
 }
 .project-card__image img {
@@ -546,7 +573,7 @@ main { flex: 1; }
 .contact-form {
   background: #fff;
   border-radius: var(--radius-xl);
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--slate-200);
 }
@@ -580,7 +607,7 @@ main { flex: 1; }
 .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
 .info-block {
   border-radius: var(--radius-xl);
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   border: 1px solid;
 }
 .info-block--blue   { background: var(--gradient-blue-card);   border-color: var(--blue-200);   }
@@ -599,7 +626,7 @@ main { flex: 1; }
 .social-block {
   background: #fff;
   border-radius: var(--radius-xl);
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--slate-200);
 }
@@ -643,10 +670,10 @@ main { flex: 1; }
 @media (min-width: 1024px) {
   .notfound { padding-left: 3rem;    padding-right: 3rem;    }
 }
-.notfound__emoji { font-size: 5rem; margin-bottom: 1.5rem; }
-.notfound h1 { font-size: 4rem; margin-bottom: 1rem; }
-.notfound h2 { font-size: 1.875rem; color: var(--slate-800); margin-bottom: 1rem; }
-.notfound p { font-size: 1.125rem; color: var(--slate-600); margin-bottom: 2rem; max-width: 36rem; margin-left: auto; margin-right: auto; }
+.notfound__emoji { font-size: clamp(3rem, 10vw, 5rem); margin-bottom: 1.5rem; }
+.notfound h1 { font-size: clamp(3rem, 12vw, 6rem); margin-bottom: 1rem; line-height: 1.1; }
+.notfound h2 { font-size: clamp(1.25rem, 4vw, 1.875rem); color: var(--slate-800); margin-bottom: 1rem; }
+.notfound p { font-size: clamp(1rem, 2vw, 1.125rem); color: var(--slate-600); margin-bottom: 2rem; max-width: 36rem; margin-left: auto; margin-right: auto; }
 
 /* ---------- Footer ---------- */
 .footer {

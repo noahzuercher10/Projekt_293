@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#faf5ff"/>
+  <rect x="200" y="60" width="400" height="360" rx="12" fill="#fff" stroke="#e9d5ff" stroke-width="2"/>
+  <rect x="220" y="80" width="360" height="70" rx="6" fill="#f3e8ff"/>
+  <text x="400" y="123" font-family="Arial" font-size="28" fill="#9333ea" text-anchor="middle">1234 + 5678</text>
+  <rect x="220" y="165" width="80" height="50" rx="6" fill="#e9d5ff"/><text x="260" y="197" font-family="Arial" font-size="22" fill="#9333ea" text-anchor="middle">7</text>
+  <rect x="310" y="165" width="80" height="50" rx="6" fill="#e9d5ff"/><text x="350" y="197" font-family="Arial" font-size="22" fill="#9333ea" text-anchor="middle">8</text>
+  <rect x="400" y="165" width="80" height="50" rx="6" fill="#e9d5ff"/><text x="440" y="197" font-family="Arial" font-size="22" fill="#9333ea" text-anchor="middle">9</text>
+  <rect x="490" y="165" width="90" height="50" rx="6" fill="#9333ea"/><text x="535" y="197" font-family="Arial" font-size="22" fill="#fff" text-anchor="middle">÷</text>
+  <rect x="220" y="225" width="80" height="50" rx="6" fill="#e9d5ff"/><text x="260" y="257" font-family="Arial" font-size="22" fill="#9333ea" text-anchor="middle">4</text>
+  <rect x="310" y="225" width="80" height="50" rx="6" fill="#e9d5ff"/><text x="350" y="257" font-family="Arial" font-size="22" fill="#9333ea" text-anchor="middle">5</text>
+  <rect x="400" y="225" width="80" height="50" rx="6" fill="#e9d5ff"/><text x="440" y="257" font-family="Arial" font-size="22" fill="#9333ea" text-anchor="middle">6</text>
+  <rect x="490" y="225" width="90" height="50" rx="6" fill="#9333ea"/><text x="535" y="257" font-family="Arial" font-size="22" fill="#fff" text-anchor="middle">×</text>
+  <rect x="220" y="350" width="360" height="50" rx="6" fill="#9333ea"/>
+  <text x="400" y="382" font-family="Arial" font-size="22" fill="#fff" text-anchor="middle">=</text>
+  <text x="400" y="460" font-family="Arial" font-size="18" fill="#9333ea" text-anchor="middle">Java Rechner</text>
+</svg>

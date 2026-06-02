@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <rect width="800" height="500" fill="#fdf2f8"/>
+  <rect x="80" y="120" width="140" height="60" rx="8" fill="#db2777" opacity=".9"/>
+  <text x="150" y="155" font-family="Arial" font-size="13" fill="#fff" text-anchor="middle">Trigger</text>
+  <line x1="220" y1="150" x2="300" y2="150" stroke="#db2777" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="300" y="120" width="140" height="60" rx="8" fill="#9333ea" opacity=".9"/>
+  <text x="370" y="155" font-family="Arial" font-size="13" fill="#fff" text-anchor="middle">Aktion 1</text>
+  <line x1="440" y1="150" x2="520" y2="150" stroke="#9333ea" stroke-width="2"/>
+  <rect x="520" y="120" width="140" height="60" rx="8" fill="#2563eb" opacity=".9"/>
+  <text x="590" y="155" font-family="Arial" font-size="13" fill="#fff" text-anchor="middle">Aktion 2</text>
+  <line x1="370" y1="180" x2="370" y2="240" stroke="#9333ea" stroke-width="2"/>
+  <rect x="300" y="240" width="140" height="60" rx="8" fill="#0ea5e9" opacity=".9"/>
+  <text x="370" y="275" font-family="Arial" font-size="13" fill="#fff" text-anchor="middle">Bedingung</text>
+  <line x1="300" y1="270" x2="220" y2="340" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="140" y="340" width="100" height="50" rx="6" fill="#22c55e" opacity=".9"/>
+  <text x="190" y="370" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Ja</text>
+  <line x1="440" y1="270" x2="510" y2="340" stroke="#0ea5e9" stroke-width="2"/>
+  <rect x="510" y="340" width="100" height="50" rx="6" fill="#ef4444" opacity=".9"/>
+  <text x="560" y="370" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Nein</text>
+  <text x="400" y="450" font-family="Arial" font-size="18" fill="#db2777" text-anchor="middle">Power Automate</text>
+</svg>

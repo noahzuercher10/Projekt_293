@@ -62,7 +62,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 100%;
   scroll-behavior: smooth;
   overflow-x: clip;              /* verhindert horizontales Scrollen ohne sticky zu brechen */
 }
@@ -168,13 +168,13 @@ main { flex: 1; min-width: 0; }
   .nav__inner { padding: 1rem 2.5rem; }    /* +40px Large Desktop */
 }
 .nav__logo {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
   font-weight: 700;
   padding: 0.25rem 0.5rem;       /* das Logo "NZ" hat selbst etwas Aussenpolster */
 }
 .nav__page-title {
   display: none;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem);
   font-weight: 700;
   color: var(--slate-700);
 }
@@ -283,11 +283,11 @@ main { flex: 1; min-width: 0; }
   border: 1px solid var(--blue-200);
   border-radius: var(--radius-full);
   color: var(--blue-600);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 0.5vw + 0.7rem, 0.9rem);
   width: fit-content;
 }
 .hero__lede {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem);
   color: var(--slate-600);
 }
 .hero__buttons {
@@ -393,7 +393,7 @@ main { flex: 1; min-width: 0; }
 .info-card--purple .info-card__icon svg { color: var(--purple-600); }
 .info-card--pink   .info-card__icon svg { color: var(--pink-600);   }
 
-.info-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.info-card h3 { font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem); margin-bottom: 0.5rem; }
 .info-card p { color: var(--slate-600); }
 
 /* Video Block */
@@ -475,7 +475,7 @@ main { flex: 1; min-width: 0; }
   margin-right: auto;
 }
 .skills__extra h3 {
-  font-size: 1.5rem;
+  font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem);
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -540,7 +540,7 @@ main { flex: 1; min-width: 0; }
 }
 .project-card:hover .project-card__image img { transform: scale(1.1); }
 .project-card__body { padding: 1.5rem; }
-.project-card__body h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.project-card__body h3 { font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem); margin-bottom: 0.5rem; }
 .project-card__body p {
   color: var(--slate-600);
   margin-bottom: 1rem;
@@ -556,7 +556,7 @@ main { flex: 1; min-width: 0; }
   color: var(--blue-600);
   border: 1px solid var(--blue-200);
   border-radius: var(--radius-full);
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 0.5vw + 0.65rem, 0.875rem);
 }
 
 /* ---------- Contact ---------- */
@@ -577,7 +577,7 @@ main { flex: 1; min-width: 0; }
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--slate-200);
 }
-.contact-form h3 { font-size: 1.5rem; margin-bottom: 1.5rem; }
+.contact-form h3 { font-size: clamp(1.25rem, 1.5vw + 1rem, 1.5rem); margin-bottom: 1.5rem; }
 .form-field { margin-bottom: 1.5rem; }
 .form-field label {
   display: block;
@@ -593,7 +593,7 @@ main { flex: 1; min-width: 0; }
   border-radius: var(--radius-sm);
   background: #fff;
   color: var(--slate-800);
-  font-size: 1rem;
+  font-size: clamp(1rem, 0.5vw + 0.9rem, 1.0625rem);
   transition: border-color .2s, box-shadow .2s;
 }
 .form-field input:focus,
@@ -618,7 +618,7 @@ main { flex: 1; min-width: 0; }
 .info-block--blue   .info-block__icon svg { color: var(--blue-600);   }
 .info-block--purple .info-block__icon svg { color: var(--purple-600); }
 .info-block--pink   .info-block__icon svg { color: var(--pink-600);   }
-.info-block h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+.info-block h3 { font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem); margin-bottom: 0.5rem; }
 .info-block a, .info-block p { color: var(--slate-600); transition: color .2s; }
 .info-block--blue   a:hover { color: var(--blue-600); }
 .info-block--purple a:hover { color: var(--purple-600); }
@@ -630,7 +630,7 @@ main { flex: 1; min-width: 0; }
   box-shadow: var(--shadow-lg);
   border: 1px solid var(--slate-200);
 }
-.social-block h3 { font-size: 1.25rem; margin-bottom: 1rem; }
+.social-block h3 { font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem); margin-bottom: 1rem; }
 .social-list { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; }
 .social-list a {
   width: 3rem;
